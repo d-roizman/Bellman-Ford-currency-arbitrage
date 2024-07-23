@@ -179,9 +179,9 @@ for x, y in cointegrated_stocks:
     plt.title(f' {x}/{y} EV/EBITDA ratio')
     plt.show()
     
-    if ratio[len(ratio) - 1] > avg + 2 * stdev:
+    if ratio[-1] > avg + 2 * stdev:
         print(f'Short {x}, Buy {y}')
-    elif ratio[len(ratio) - 1] < avg - 2 * stdev:
+    elif ratio[-1] < avg - 2 * stdev:
         print(f'Short {y}, Buy {x}')
 
 
