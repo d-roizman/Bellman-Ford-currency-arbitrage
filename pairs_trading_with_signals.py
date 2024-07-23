@@ -82,7 +82,7 @@ def TTM_ev_ebitda (tickers) :
     return pd.DataFrame(EV_EBITDA_series)
 
 # Example
-tickers = ["AAPL", "MSFT", "NVDA", "GOOG", "GOOGL", "AMZN", "META", "BRK-B", "LLY", "AVGO",
+tickers = ["AAPL", "MSFT", "NVDA", "GOOG", "PBR", "AMZN", "META", "BRK-B", "LLY", "AVGO",
          "TSLA", "JPM", "WMT", "V", "XOM", "UNH", "MA", "ORCL", "PG", "COST",
          "JNJ", "HD", "BAC", "MRK", "ABBV", "AMD", "CVX", "NFLX", "KO", "ADBE",
          "CRM", "PEP", "QCOM", "WFC", "TMUS", "LIN", "TMO", "AMAT", "CSCO", "ACN",
