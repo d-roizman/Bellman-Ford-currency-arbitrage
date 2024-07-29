@@ -78,9 +78,9 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001):
     return opportunities
                 
 api_key = 'get_your_key'
-currencies = ['USD', 'EUR', 'GBP', 'JPY', 'INR', 'MXN', 'BRL', 'ARS', 'CNY']
-rates = get_currency_rates(api_key, currencies)
-neg_log_rates = get_currency_rates(api_key, currencies, neg_log = True)
+top10_currencies = ['USD', 'EUR', 'JPY', 'GBP', 'CNY', 'AUD', 'CAD', 'CHF', 'HKD', 'SGD']
+rates = get_currency_rates(api_key, top10_currencies)
+neg_log_rates = get_currency_rates(api_key, top10_currencies, neg_log = True)
 print(rates)
 arbitrage_opportunities = Bellman_Ford_Arbitrage(neg_log_rates)
 [print(a) for a in arbitrage_opportunities]
