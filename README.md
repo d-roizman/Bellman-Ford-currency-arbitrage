@@ -33,6 +33,7 @@ The API key is set on the [ExchangeRate-API website](https://www.exchangerate-ap
 The function 'get_currency_rates' receives an API key (string), a list of currencies and a True if you want the negative logarithm of the currencies.
 
 ```bash
+
    def get_currency_rates(api_key, currencies, neg_log=False):
        data = pd.DataFrame(index = currencies, columns = currencies)
        for currency in currencies:
@@ -63,6 +64,7 @@ The idea of the negative log is to be able to run the Bellman Ford algorithm. Th
 See the references for a detailed explanation of how (and why) the algorithm works.
 
 ´´´bash
+   
    def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001):
        currencies = rates_matrix.index    
        source = 0 # (obs #3)
@@ -103,6 +105,7 @@ See the references for a detailed explanation of how (and why) the algorithm wor
 5. **Check if the algorithm found any relevant arbitrage opportunities**
 
 ´´´bash
+   
    api_key = 'your_api_key'
    top10_currencies = ['USD', 'EUR', 'JPY', 'GBP', 'CNY', 'AUD', 'CAD', 'CHF', 'HKD', 'SGD']
    rates = get_currency_rates(api_key, top10_currencies)
