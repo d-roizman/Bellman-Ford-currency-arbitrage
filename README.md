@@ -14,7 +14,7 @@ The Bellman Ford algorithm got famous for solving "quickly" the shortest path pr
 
    ```bash
    https://github.com/your-username/currency-arbitrage.git](https://github.com/d-roizman/Bellman-Ford-currency-arbitrage/blob/Quant_Finance/currency_arbitrage_bellman_ford.py
-   exit
+
 
 2. **Install the required packages and set API key:**
 
@@ -22,7 +22,8 @@ The Bellman Ford algorithm got famous for solving "quickly" the shortest path pr
   from math import log
   import pandas as pd
   import requests
-```
+
+
 The API key is set on the [ExchangeRate-API website](https://www.exchangerate-api.com/), which is used to provide free real-time currency data.
 
 3. **Run the script**
