@@ -49,8 +49,8 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[flo
 
     # Relax all edges (V-1) times
     for _ in range(n-1):
-        for source_curr in range(n): # source_curr = 0
-            for dest_curr in range(n): # dest_curr = 1
+        for source_curr in range(n):
+            for dest_curr in range(n):
                 if min_dist[dest_curr] > min_dist[source_curr] + rates_matrix.iloc[source_curr][dest_curr]:
                     min_dist[dest_curr] = min_dist[source_curr] + rates_matrix.iloc[source_curr][dest_curr]
                     pre[dest_curr] = source_curr
@@ -106,9 +106,9 @@ for path in arbitrage_opportunities:
 
 '''_______________________________OBSERVATIONS___________________________________
 
-♪ obs #1: Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to 
+♪ obs #1: "Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to 
 manually add query strings to your URLs, or to form-encode your PUT & POST data — but 
-nowadays, just use the json method!
+nowadays, just use the json method!"
 
 ♪ obs #2: 'log_margin' of 0.001 to avoid looking for insignificant arbitrage opportunities
 
