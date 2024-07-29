@@ -12,14 +12,14 @@ The Bellman Ford algorithm got famous for quickly solving the 'shortest path pro
 
 1. **Clone the repository:**
 
-   ```bash
+```bash
    https://github.com/your-username/currency-arbitrage.git](https://github.com/d-roizman/Bellman-Ford-currency-arbitrage/blob/Quant_Finance/currency_arbitrage_bellman_ford.py
 ```
 
 
 2. **Install the required packages and set API key:**
 
-  ```bash
+```bash
   from math import log
   import pandas as pd
   import requests
@@ -118,8 +118,6 @@ neg_log_rates = get_currency_rates(api_key, top10_currencies, neg_log = True)
 print(rates)
 arbitrage_opportunities = Bellman_Ford_Arbitrage(neg_log_rates)
 [print(a) for a in arbitrage_opportunities]
-
-# Testing
 
 for path in arbitrage_opportunities:
     arbitrage_1 = path.copy()    
