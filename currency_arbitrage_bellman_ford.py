@@ -36,7 +36,7 @@ def get_currency_rates(api_key, currencies, neg_log=False):
         return data
 
 
-def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[float, ...]]): # rates_matrix = rates
+def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001):
 
     currencies = rates_matrix.index    
     source = 0 # (obs #3)
