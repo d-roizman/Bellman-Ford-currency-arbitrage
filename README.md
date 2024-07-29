@@ -1,6 +1,6 @@
 # Bellman Ford currency arbitrage detection algorithm
 
-This repository contains a Python script to identify arbitrage opportunities in currency trading using the Bellman-Ford algorithm. The script fetches current exchange rates and processes them to find profitable arbitrage cycles.
+The Bellman Ford algorithm got famous for solving "quickly" the shortest path problem on directed graphs. It's application to currency trading is due to the fact that if there are still "relaxable vertices" on the ajcacency matrix of currency rates, then there is what is called a negative cycle, which represents an arbitrage opportunity. This repository contains a Python script to identify arbitrage opportunities in currency trading using the Bellman-Ford algorithm. The script fetches current exchange rates and processes them to find profitable arbitrage cycles.
 
 ## Features
 
@@ -23,4 +23,6 @@ This repository contains a Python script to identify arbitrage opportunities in 
   import pandas as pd
   import requests
 ```
+The API key is set on the [ExchangeRate-API website](https://www.exchangerate-api.com/), which is used to provide free real-time currency data.
+
 3. **Run the script**
