@@ -16,6 +16,7 @@ The Bellman Ford algorithm got famous for quickly solving the 'shortest path pro
    https://github.com/your-username/currency-arbitrage.git](https://github.com/d-roizman/Bellman-Ford-currency-arbitrage/blob/Quant_Finance/currency_arbitrage_bellman_ford.py
 ```
 
+
 2. **Install the required packages and set API key:**
 
   ```bash
@@ -25,6 +26,7 @@ The Bellman Ford algorithm got famous for quickly solving the 'shortest path pro
 ```
 
 The API key is set on the [ExchangeRate-API website](https://www.exchangerate-api.com/), which is used to provide free real-time currency data.
+
 
 3. **Get currency rates**
 
@@ -56,6 +58,7 @@ def get_currency_rates(api_key, currencies, neg_log=False):
         return data
 ```
 The idea of the negative log is to be able to run the Bellman Ford algorithm. That is because of how the edge-relaxation works.
+
 
 4. **Bellman Ford algorithm**
 
@@ -104,6 +107,7 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001):
 
 ´´´
 
+
 5. **Check if the algorithm found any relevant arbitrage opportunities**
 
 ´´´bash
@@ -136,6 +140,7 @@ for path in arbitrage_opportunities:
 ´´´
 
 Thats it!
+
    
 6. **References**
    [4.4 Shortest Paths - ALGORITHMS (Sedgewick, R., WAYNE, K.)](https://algs4.cs.princeton.edu/44sp/)
