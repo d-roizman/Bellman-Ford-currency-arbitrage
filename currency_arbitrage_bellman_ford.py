@@ -12,7 +12,7 @@ import requests # (obs #1)
 
 def get_currency_rates(api_key, currencies, neg_log=False):
     data = pd.DataFrame(index = currencies, columns = currencies)
-    for currency in currencies: # currency = 'EUR'
+    for currency in currencies:
         url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{currency}"
         response = requests.get(url)
         
@@ -20,7 +20,7 @@ def get_currency_rates(api_key, currencies, neg_log=False):
             raise Exception(f"API request failed with status code {response.status_code}")
     
         rates = response.json()
-        for currency_2 in currencies: # currency_2 = 'ARS'
+        for currency_2 in currencies:
             if currency_2 != currency:
                 data[currency][currency_2] = rates['conversion_rates'][currency_2]
             else:
@@ -74,7 +74,7 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[flo
                     if path not in opportunities:
                         opportunities.append(path)
     
-    return list(opportunities)
+    return opportunities
                 
 api_key = 'get_your_key'
 currencies = ['USD', 'EUR', 'GBP', 'JPY', 'INR', 'MXN', 'BRL', 'ARS', 'CNY']
@@ -88,7 +88,7 @@ arbitrage_opportunities = Bellman_Ford_Arbitrage(neg_log_rates)
 
 arbitrage_1 = arbitrage_opportunities[1].copy()
 
-initial_balance = 100 # in the respective source-currency listed first on 'arbitrage_1'
+initial_balance = 100 # in the respective source-currency listed last on 'arbitrage_1'
 final_balance = initial_balance
 
 source_currency = arbitrage_1.pop()
