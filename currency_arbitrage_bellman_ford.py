@@ -38,6 +38,7 @@ def get_currency_rates(api_key, currencies, neg_log=False):
 
 def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[float, ...]]): # rates_matrix = rates
 
+    currencies = rates_matrix.index    
     source = 0 # (obs #3)
     n = len(rates_matrix)
     min_dist = [float('inf')] * n
@@ -59,7 +60,7 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[flo
     opportunities = []
     for source_curr in range(n): # source_curr = 0
         for dest_curr in range(n): # dest_curr = 2
-            if min_dist[dest_curr] > min_dist[source_curr] + rates_matrix.iloc[source_curr][dest_curr] + log_margin:
+            if min_dist[dest_curr] > min_dist[source_curr] + rates_matrix.iloc[source_curr][dest_curr] + log_margin: # (obs #2)
                 # negative cycle exists, and use the predecessor chain to print the cycle
                 cycle = [dest_curr]
                 # Start from the source and go backwards until you see the source vertex again
@@ -86,18 +87,21 @@ arbitrage_opportunities = Bellman_Ford_Arbitrage(neg_log_rates)
 
 # Testing
 
-arbitrage_1 = arbitrage_opportunities[1].copy()
-
-initial_balance = 100 # in the respective source-currency listed last on 'arbitrage_1'
-final_balance = initial_balance
-
-source_currency = arbitrage_1.pop()
-while arbitrage_1:
-    dest_currency = arbitrage_1.pop()
-    final_balance *= rates[source_currency][dest_currency]        
-    source_currency = dest_currency
-
-final_balance
+for path in arbitrage_opportunities:
+    arbitrage_1 = path.copy()    
+    
+    initial_balance = 100 # in the respective source-currency listed first on 'arbitrage_1'
+    final_balance = initial_balance
+    
+    source_currency = arbitrage_1.pop()
+    while arbitrage_1:
+        dest_currency = arbitrage_1.pop()
+        final_balance *= rates[source_currency][dest_currency]        
+        source_currency = dest_currency
+    
+    if final_balance - initial_balance > 0.5:
+        d = final_balance - initial_balance
+        print(f'ARBITRAGE OPPORTUNITY ({d}% gain): {path} ')
 
 
 '''_______________________________OBSERVATIONS___________________________________
@@ -106,8 +110,7 @@ final_balance
 manually add query strings to your URLs, or to form-encode your PUT & POST data — but 
 nowadays, just use the json method!
 
-♪ obs #2: rounding up to 2 digits to avoid insignificant arbitrage opportunities (subject to
-floating point error, for example)
+♪ obs #2: 'log_margin' of 0.001 to avoid looking for insignificant arbitrage opportunities
 
 ♪ obs #3: The Bellman-Ford algorithm can be run from any initial node
 
