@@ -76,7 +76,7 @@ def Bellman_Ford_Arbitrage(rates_matrix, log_margin = 0.001): #: Tuple[Tuple[flo
     
     return list(opportunities)
                 
-api_key = 'fec7358b1d4c01ec0c100701'
+api_key = 'get_your_key'
 currencies = ['USD', 'EUR', 'GBP', 'JPY', 'INR', 'MXN', 'BRL', 'ARS', 'CNY']
 rates = get_currency_rates(api_key, currencies)
 neg_log_rates = get_currency_rates(api_key, currencies, neg_log = True)
