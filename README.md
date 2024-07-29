@@ -21,7 +21,7 @@ This repository contains a Python script to identify arbitrage opportunities in 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/currency-arbitrage.git
+   git clone [https://github.com/your-username/currency-arbitrage.git](https://github.com/d-roizman/Bellman-Ford-currency-arbitrage/blob/Quant_Finance/currency_arbitrage_bellman_ford.py)
    cd currency-arbitrage
 
 2. **Install the required packages:**
