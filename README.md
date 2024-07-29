@@ -1,20 +1,12 @@
-# BF currency arbitrage detection algorithm
+# Bellman Ford currency arbitrage detection algorithm
 
 This repository contains a Python script to identify arbitrage opportunities in currency trading using the Bellman-Ford algorithm. The script fetches current exchange rates and processes them to find profitable arbitrage cycles.
 
 ## Features
 
 - Fetches real-time currency exchange rates.
-- Uses the Bellman-Ford algorithm to detect arbitrage opportunities.
+- Uses the Bellman-Ford algorithm to detect currency arbitrage opportunities.
 - Outputs potential profitable currency trading paths.
-
-## Prerequisites
-
-- Python 3.x
-- Required Python libraries:
-  - `math`
-  - `pandas`
-  - `requests`
 
 ## Usage
 
@@ -30,5 +22,5 @@ This repository contains a Python script to identify arbitrage opportunities in 
   from math import log
   import pandas as pd
   import requests
-
+```
 3. **Run the script**
