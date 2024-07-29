@@ -142,4 +142,4 @@ Thats it!
 
    
 6. **References**
-   [4.4 Shortest Paths - ALGORITHMS (Sedgewick, R., WAYNE, K.)](https://algs4.cs.princeton.edu/44sp/)
+   [4.4 Shortest Paths - ALGORITHMS (SEDGEWICK, R., WAYNE, K.)](https://algs4.cs.princeton.edu/44sp/)
